@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://qapediaq.webprv.com/api/auth/login",
+  "properties": {
+    "success": {
+      "id": "/properties/success",
+      "type": "boolean"
+    },
+    "token": {
+      "id": "/properties/token",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}
+
