@@ -69,3 +69,5 @@ def test_addchild():
 
 test_login()
 test_addchild()
+
+# test
