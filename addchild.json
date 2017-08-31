@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://qapediaq.webprv.com/api/parent/addchild",
+  "properties": {
+    "data": {
+      "id": "/properties/data",
+      "properties": {
+        "birthday": {
+          "id": "/properties/data/properties/birthday",
+          "type": "string"
+        },
+        "first_name": {
+          "id": "/properties/data/properties/first_name",
+          "type": "string"
+        },
+        "gender": {
+          "id": "/properties/data/properties/gender",
+          "type": "string"
+        },
+        "id": {
+          "id": "/properties/data/properties/id",
+          "type": "integer"
+        },
+        "last_name": {
+          "id": "/properties/data/properties/last_name",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "success": {
+      "id": "/properties/success",
+      "type": "boolean"
+    }
+  },
+  "type": "object"
+}
