@@ -3,43 +3,47 @@ import json
 
 from jsonschema import validate
 
-def validate_json_chema():
-    return
+
+def validate_json_chema(file, r):
+    # open and load json scheme file
+    schema_file = open(file, "r")
+    schema_json = json.load(schema_file)
+
+    # validation
+    validate(r.json(), schema_json)
+    print(r.content)
+
+    # close json scheme file
+    schema_file.close()
+
 
 def test_login():
-# data for request
+    # data for request
     url = "http://qapediaq.webprv.com/api/auth/login"
 
     header = {
-            "Version": "28"
-            }
+        "Version": "28"
+    }
 
     data = {
-            "email": "2kec@gmail.com",
-            "password": "12345678"
-            }
+        "email": "2kec@gmail.com",
+        "password": "12345678"
+    }
 
-# getting response
+    # getting response
     response = requests.post(url, data=data, headers=header)
 
-# extract data from response and saving token for the next test
+    # extract data from response and saving token for the next test
     global token
     token = response.json()["token"]
 
-# open and load json scheme file
-    schema_file = open("login.json", "r")
-    schema_json = json.load(schema_file)
-
-# validation
-    validate(response.json(), schema_json)
-
-# close json scheme file
-    schema_file.close()
+    validate_json_chema("login.json", response)
 
     return token
 
+
 def test_addchild():
-# data for request
+    # data for request
     url = "http://qapediaq.webprv.com/api/parent/addchild"
 
     header = {
@@ -54,20 +58,11 @@ def test_addchild():
         "last_name": "test last name"
     }
 
-# getting response
+    # getting response
     response = requests.post(url, data=data, headers=header)
 
-# open and load json scheme file
-    schema_file = open("addchild.json", "r")
-    schema_json = json.load(schema_file)
+    validate_json_chema("addchild.json", response)
 
-# validation
-    validate(response.json(), schema_json)
-
-# close json scheme file
-    schema_file.close()
 
 test_login()
 test_addchild()
-
-# test
