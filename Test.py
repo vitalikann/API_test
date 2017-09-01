@@ -4,6 +4,8 @@ import json
 
 from jsonschema import validate
 
+server = "http://qapediaq.webprv.com"
+
 
 def validate_json_chema(file, r):
     # open and load json scheme file
@@ -19,7 +21,7 @@ def validate_json_chema(file, r):
 
 def test_login():
     # data for request
-    url = "http://qapediaq.webprv.com/api/auth/login"
+    url = server + "/api/auth/login"
 
     header = {
         "Version": "28"
@@ -44,7 +46,7 @@ def test_login():
 
 def test_addchild():
     # data for request
-    url = "http://qapediaq.webprv.com/api/parent/addchild"
+    url = server + "/api/parent/addchild"
 
     header = {
         "Version": "28"
