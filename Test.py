@@ -12,7 +12,6 @@ def validate_json_chema(file, r):
 
     # validation
     validate(r.json(), schema_json)
-    print(r.content)
 
     # close json scheme file
     schema_file.close()
