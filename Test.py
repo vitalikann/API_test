@@ -1,3 +1,4 @@
+import random
 import requests
 import json
 
@@ -53,7 +54,7 @@ def test_addchild():
     data = {
         "token": token,
         "birthday": "2010-10-16",
-        "first_name": "test first name",
+        "first_name": "test first name" + str(random.randrange(1000)), # we cannot create another child with the same name
         "gender": "female",
         "last_name": "test last name"
     }
