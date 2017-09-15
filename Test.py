@@ -34,10 +34,16 @@ def test_login():
 
     # getting response
     response = requests.post(url, data=data, headers=header)
+    print(response.content)
 
     # extract data from response and saving token for the next test
     global token
     token = response.json()["token"]
+
+    # extract more data from response and put it into dict
+    result = response.json()["success"]
+    dictionary = {"value": token, "value1": result}
+    print(dictionary)
 
     validate_json_chema("login.json", response)
 
@@ -67,4 +73,4 @@ def test_addchild():
 
 
 test_login()
-test_addchild()
+# test_addchild()
