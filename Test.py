@@ -34,7 +34,6 @@ def test_login():
 
     # getting response
     response = requests.post(url, data=data, headers=header)
-    print(response.content)
 
     # extract data from response and saving token for the next test
     global token
@@ -73,4 +72,4 @@ def test_addchild():
 
 
 test_login()
-# test_addchild()
+test_addchild()
