@@ -1,38 +1,48 @@
+
+
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "definitions": {},
-  "id": "http://qapediaq.webprv.com/api/parent/addchild",
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "additionalProperties": false, 
+  "definitions": {}, 
   "properties": {
     "data": {
-      "id": "/properties/data",
+      "additionalProperties": false, 
       "properties": {
         "birthday": {
-          "id": "/properties/data/properties/birthday",
           "type": "string"
-        },
+        }, 
         "first_name": {
-          "id": "/properties/data/properties/first_name",
           "type": "string"
-        },
+        }, 
         "gender": {
-          "id": "/properties/data/properties/gender",
           "type": "string"
-        },
+        }, 
         "id": {
-          "id": "/properties/data/properties/id",
+          "exclusiveMinimum": true, 
+          "minimum": 1, 
           "type": "integer"
-        },
+        }, 
         "last_name": {
-          "id": "/properties/data/properties/last_name",
           "type": "string"
         }
-      },
+      }, 
+      "required": [
+        "birthday", 
+        "id", 
+        "last_name", 
+        "first_name", 
+        "gender"
+      ], 
       "type": "object"
-    },
+    }, 
     "success": {
-      "id": "/properties/success",
       "type": "boolean"
     }
-  },
+  }, 
+  "required": [
+    "success", 
+    "data"
+  ], 
   "type": "object"
 }
+

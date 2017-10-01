@@ -18,6 +18,8 @@ def validate_json_chema(file, r):
     # close json scheme file
     schema_file.close()
 
+    print(r.content)
+
 
 def test_login():
     # data for request
